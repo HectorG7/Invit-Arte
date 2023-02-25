@@ -1,0 +1,14 @@
+---
+import Navbar from "./Navbar.jsx";
+
+const { title } = Astro.props;
+---
+
+<header class="cabecera">
+  <Navbar client:load />
+  <section class="container header__title-container">
+    <div id="intro">
+      <h2>{title}</h2>
+    </div>
+  </section>
+</header>
