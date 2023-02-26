@@ -1,0 +1,13 @@
+---
+const { title, text, icon } = Astro.props;
+---
+
+<div class="content__invitation">
+  <div class="content__invitation-card">
+    <span class="content__invitation-icon"><i class={icon}></i></span>
+    <p class="content__invitation-title">{title}</p>
+    <p class="content__invitation-text">
+      {text}
+    </p>
+  </div>
+</div>

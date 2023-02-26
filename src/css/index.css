@@ -1288,3 +1288,294 @@ option {
   font-size: 4rem;
 }
 
+=======
+/***** Servicios *****/
+
+.cabecera {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+  background-image: radial-gradient(#d3ede4 2px, #b6e2d3 2px);
+  background-size: 40px 40px;
+}
+
+#intro h2 {
+  font-weight: 800;
+  margin-top: 35px;
+}
+
+.contenedor {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.sTarjetas {
+  padding: 4.5rem 0 2rem;
+}
+
+.contenedorP {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5rem auto;
+}
+
+.tarjetaP,
+.formaP,
+.listaP {
+  display: grid;
+}
+
+.formaP,
+.tituloP,
+.costo {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.fondo {
+  padding: 0.5rem;
+  background: linear-gradient(90rad, var(--mint), var(--yellow));
+  border-radius: 10px;
+}
+
+.tarjetaP {
+  width: 450px;
+  height: 492px;
+  row-gap: 2rem;
+  background-color: var(--darkGreen);
+  /* border: 7px solid;
+  border-image: linear-gradient(to right, var(--mint), var(--yellow)) 1; */
+  border-radius: 10px;
+  padding: 3rem;
+}
+
+.formaP {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  place-items: center;
+  margin-bottom: 1rem;
+  background-color: var(--mint);
+}
+
+.formaP:hover {
+  animation: earthquake 0.8s;
+}
+
+.formaP i {
+  font-size: 30px;
+}
+
+.tituloP {
+  font-size: 4rem;
+  color: whitesmoke;
+  margin-bottom: 1rem;
+}
+
+.costo {
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  color: whitesmoke;
+}
+
+.listaP {
+  row-gap: 1rem;
+  padding-left: 0%;
+  margin-top: 0;
+}
+
+.caracP {
+  display: flex;
+  column-gap: 3rem;
+  align-items: center;
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+.caracP i {
+  font-size: 3rem;
+  color: var(--yellow);
+}
+
+.botonP {
+  background-color: var(--yellow);
+  color: #000;
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+  margin: 0px auto;
+  margin-bottom: 0%;
+}
+
+.botonP:hover {
+  background-color: var(--green);
+  color: var(--yellow);
+}
+
+@media (max-width: 768px) {
+  #intro {
+    font-size: 2.5rem;
+    transform: none;
+    left: auto;
+    margin-top: 40px;
+  }
+
+  .contenedorP {
+    display: grid;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .tarjetaP {
+    width: 300px;
+  }
+
+  .tituloP {
+    font-size: 3.5rem;
+  }
+
+  .costo {
+    font-size: 3rem;
+  }
+
+  .listaP {
+    row-gap: 1rem;
+  }
+
+  .caracP {
+    font-size: 1.5rem;
+  }
+
+  .caracP i {
+    font-size: 2.5rem;
+  }
+
+  .botonP {
+    font-size: 1.25rem;
+  }
+}
+
+/***** Create Invitation *****/
+
+.form__create {
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  margin: 5rem auto;
+}
+
+.create__seccion-image {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .create__seccion-image {
+    display: block;
+    width: 550px;
+    animation: up-and-down 1s infinite;
+  }
+}
+/***** Login and Register *****/
+
+.login {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .login__container {
+    width: 30%;
+  }
+}
+/*plantillas*/
+
+.tarjetaS {
+  height: 500px;
+}
+
+.plantilla {
+  border-radius: 10px;
+  border: 3px solid var(--mint);
+  cursor: pointer;
+  height: 300px;
+  transition: all 0.3s ease-in-out;
+}
+
+.plantilla:hover {
+  transform: translateY(-0.8rem);
+}
+
+.contPlantillas {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 15px;
+}
+
+.imagen-light {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(100%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.show {
+  transform: translate(0);
+}
+
+.agregarImg {
+  object-fit: cover;
+  width: 30%;
+  height: fit-content;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s 0.2s;
+  transform: scale(0);
+  z-index: 100;
+}
+
+.close {
+  background: linear-gradient(90rad, var(--mint), var(--yellow));
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  right: 15px;
+  width: 40px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.showImage {
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .tarjetaS {
+    height: 400px;
+  }
+
+  .plantilla {
+    height: auto;
+  }
+
+  .agregarImg {
+    width: 90%;
+    height: auto;
+  }
+}
