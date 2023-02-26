@@ -1428,3 +1428,86 @@ option {
     width: 30%;
   }
 }
+/*plantillas*/
+
+.tarjetaS {
+  height: 500px;
+}
+
+.plantilla {
+  border-radius: 10px;
+  border: 3px solid var(--mint);
+  cursor: pointer;
+  height: 300px;
+  transition: all 0.3s ease-in-out;
+}
+
+.plantilla:hover {
+  transform: translateY(-0.8rem);
+}
+
+.contPlantillas {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 15px;
+}
+
+.imagen-light {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(100%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.show {
+  transform: translate(0);
+}
+
+.agregarImg {
+  object-fit: cover;
+  width: 30%;
+  height: fit-content;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s 0.2s;
+  transform: scale(0);
+  z-index: 100;
+}
+
+.close {
+  background: linear-gradient(90rad, var(--mint), var(--yellow));
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  right: 15px;
+  width: 40px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.showImage {
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .tarjetaS {
+    height: 400px;
+  }
+
+  .plantilla {
+    height: auto;
+  }
+
+  .agregarImg {
+    width: 90%;
+    height: auto;
+  }
+}
