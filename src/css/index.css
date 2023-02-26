@@ -1221,6 +1221,74 @@ option {
   color: var(--darkGreen);
 }
 
+/***** Contacto *****/
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.5rem auto;
+  gap: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem auto;
+  }
+
+  .contact__container {
+    width: 40%;
+    margin: 0 auto;
+    /* margin-bottom: 6rem; */
+  }
+}
+
+.contact__container {
+  width: 100%;
+  margin: 3rem auto;
+  /* margin-bottom: 6rem; */
+}
+
+.contact__button {
+  width: 100%;
+  text-decoration: none;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90rad, var(--mint), var(--yellow));
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.contact__button:hover p {
+  background: var(--darkGreen);
+  color: var(--white);
+}
+
+.contact__button p {
+  background: var(--white);
+  display: block;
+  padding: 4rem 2rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0;
+  color: var(--darkGreen);
+  transition: all 0.2s ease-in-out;
+}
+
+.contact__button i {
+  font-size: 4rem;
+}
+
+=======
 /***** Servicios *****/
 
 .cabecera {
