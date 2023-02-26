@@ -1,0 +1,53 @@
+---
+import InvitationContentCard from "./InvitationContentCard.astro";
+
+const contents = [
+  {
+    title: "Contador",
+    text: "Permite que tus invitados estén notificados de los días que falten para el evento.",
+    icon: "fa-solid fa-clock",
+  },
+  {
+    title: "Galeria de Fotos",
+    text: "Crea un carrete personalizado con fotos y recuerdos para compartir con tus invitados.",
+    icon: "fa-solid fa-photo-film",
+  },
+  {
+    title: "Mesa de Regalos",
+    text: "Ayuda a tus invitados, comparte con ellos ideas de lo que podrían obsequiarte.",
+    icon: "fa-solid fa-gift",
+  },
+  {
+    title: "Ubicación",
+    text: "Que nadie falte, comparte la ubicación exacta del evento.",
+    icon: "fa-solid fa-map",
+  },
+  {
+    title: "Asistencia",
+    text: "Crea una lista de tus invitados y permite que confirmen su asistencia.",
+    icon: "fa-solid fa-user-check",
+  },
+  {
+    title: "Vestimenta",
+    text: "Notifica a tus invitados si elegiste alguna temática para tu evento.",
+    icon: "fa-solid fa-shirt",
+  },
+  {
+    title: "Padrinos",
+    text: "Crea una forma especial de pedirles a esas personas especiales que formen parte de tu evento.",
+    icon: "fa-solid fa-user-secret",
+  },
+  {
+    title: "Y más...",
+    text: "Tienes una idea adicional? Envíanos tus sugerencias estamos para escucharte.",
+    icon: "fa-solid fa-shuffle",
+  },
+];
+---
+
+<section class="container margin__bottom">
+  <h4 class="subtitle">¡Tu invitación puede tener todo esto!</h4>
+  <div class="content__invitation-container">
+    {contents.map((content) => <InvitationContentCard {...content} />)}
+  </div>
+</section>
