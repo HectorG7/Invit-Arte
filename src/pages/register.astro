@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { FormRegister } from "../components/forms/FormRegister.jsx";
+---
+
+<Layout title="Invit💛Arte (Registrate)">
+  <main class="page__complete container">
+    <section class="login">
+      <div class="login__container">
+        <FormRegister client:load />
+      </div>
+    </section>
+  </main>
+</Layout>
