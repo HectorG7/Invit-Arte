@@ -1220,3 +1220,171 @@ option {
   background: var(--yellow);
   color: var(--darkGreen);
 }
+
+/***** Servicios *****/
+
+.cabecera {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+  background-image: radial-gradient(#d3ede4 2px, #b6e2d3 2px);
+  background-size: 40px 40px;
+}
+
+#intro h2 {
+  font-weight: 800;
+  margin-top: 35px;
+}
+
+.contenedor {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.sTarjetas {
+  padding: 4.5rem 0 2rem;
+}
+
+.contenedorP {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5rem auto;
+}
+
+.tarjetaP,
+.formaP,
+.listaP {
+  display: grid;
+}
+
+.formaP,
+.tituloP,
+.costo {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.fondo {
+  padding: 0.5rem;
+  background: linear-gradient(90rad, var(--mint), var(--yellow));
+  border-radius: 10px;
+}
+
+.tarjetaP {
+  width: 450px;
+  height: 492px;
+  row-gap: 2rem;
+  background-color: var(--darkGreen);
+  /* border: 7px solid;
+  border-image: linear-gradient(to right, var(--mint), var(--yellow)) 1; */
+  border-radius: 10px;
+  padding: 3rem;
+}
+
+.formaP {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  place-items: center;
+  margin-bottom: 1rem;
+  background-color: var(--mint);
+}
+
+.formaP:hover {
+  animation: earthquake 0.8s;
+}
+
+.formaP i {
+  font-size: 30px;
+}
+
+.tituloP {
+  font-size: 4rem;
+  color: whitesmoke;
+  margin-bottom: 1rem;
+}
+
+.costo {
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  color: whitesmoke;
+}
+
+.listaP {
+  row-gap: 1rem;
+  padding-left: 0%;
+  margin-top: 0;
+}
+
+.caracP {
+  display: flex;
+  column-gap: 3rem;
+  align-items: center;
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+.caracP i {
+  font-size: 3rem;
+  color: var(--yellow);
+}
+
+.botonP {
+  background-color: var(--yellow);
+  color: #000;
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+  margin: 0px auto;
+  margin-bottom: 0%;
+}
+
+.botonP:hover {
+  background-color: var(--green);
+  color: var(--yellow);
+}
+
+@media (max-width: 768px) {
+  #intro {
+    font-size: 2.5rem;
+    transform: none;
+    left: auto;
+    margin-top: 40px;
+  }
+
+  .contenedorP {
+    display: grid;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .tarjetaP {
+    width: 300px;
+  }
+
+  .tituloP {
+    font-size: 3.5rem;
+  }
+
+  .costo {
+    font-size: 3rem;
+  }
+
+  .listaP {
+    row-gap: 1rem;
+  }
+
+  .caracP {
+    font-size: 1.5rem;
+  }
+
+  .caracP i {
+    font-size: 2.5rem;
+  }
+
+  .botonP {
+    font-size: 1.25rem;
+  }
+}
