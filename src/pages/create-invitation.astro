@@ -1,0 +1,18 @@
+---
+import FormCreateInvitation from "../components/forms/FormCreateInvitation";
+import Layout from "../layouts/Layout.astro";
+import SubPageLayout from "../layouts/SubPageLayout.astro";
+---
+
+<Layout title="Invit💛Arte (Invitación)">
+  <SubPageLayout title="Crea tu invitación 🥳">
+    <main>
+      <div class="container form__create">
+        <FormCreateInvitation client:load />
+        <div class="create__seccion-image">
+          <img src="/images/events.svg" alt="Imagen de evento" />
+        </div>
+      </div>
+    </main>
+  </SubPageLayout>
+</Layout>
