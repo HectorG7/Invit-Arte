@@ -832,6 +832,7 @@ option {
   padding: 0.5rem;
   background: linear-gradient(90rad, var(--mint), var(--yellow));
   border-radius: 8px;
+  margin-top: 100px;
 }
 
 .welcome__section {
@@ -1288,7 +1289,6 @@ option {
   font-size: 4rem;
 }
 
-=======
 /***** Servicios *****/
 
 .cabecera {
@@ -1406,6 +1406,9 @@ option {
   width: fit-content;
   height: fit-content;
   margin: 0px auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 0%;
 }
 
