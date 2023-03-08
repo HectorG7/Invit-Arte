@@ -14,12 +14,8 @@ const Navbar = () => {
       url: "/contact/",
     },
     {
-      text: "crear invitación",
-      url: "/create-invitation/",
-    },
-    {
-      text: "plantillas",
-      url: "/designs/",
+      text: "categorías",
+      url: "/categories/",
     },
     {
       text: "inicio",

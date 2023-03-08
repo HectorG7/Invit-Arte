@@ -1,22 +1,22 @@
 ---
-import TemplateCard from "../components/TemplateCard.astro";
+import CategoriesCard from "../components/CategoriesCard.astro";
 import { supabase } from "../config/supabase.config";
 import Layout from "../layouts/Layout.astro";
 import SubPageLayout from "../layouts/SubPageLayout.astro";
 
-const { data } = await supabase.from("designs").select().order("name");
+const { data } = await supabase.from("categories").select().order("name");
 const templates = data;
 ---
 
 <Layout title="Invit💛Arte (Diseños)">
-  <SubPageLayout title="Diseños Disponibles">
+  <SubPageLayout title="Categorías Disponibles">
     <main>
       <div>
         <li class="navbar__menu-search">
           <input
             type="search"
             id="searchBar"
-            placeholder="Buscar tu diseño"
+            placeholder="Buscar categoría"
           />
           <button id="searchButton">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -28,7 +28,7 @@ const templates = data;
           <div class="contenedorP contPlantillas">
             {
               templates.map((template, i) => (
-                <TemplateCard id={i + 1} {...template} />
+                <CategoriesCard id={i + 1} {...template} />
               ))
             }
             <section class="imagen-light">

@@ -8,7 +8,7 @@ const { name, image, id } = Astro.props;
       <img src={image} alt={name} class="plantilla" />
     </header>
     <h2 class="costo">{name}</h2>
-    <a href={`/create-invitation?id=${id}`} class="button boton flex botonP">
+    <a href="/designs/" class="button boton flex botonP">
       Ver plantillas<i class="fa-solid fa-arrow-right"></i>
     </a>
   </article>
