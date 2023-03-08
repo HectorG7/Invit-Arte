@@ -21,6 +21,7 @@ const initialForms = {
 const validFields = {
   name: false,
   email: false,
+  file: true,
 };
 
 const validationsForm = (form, e) => {
@@ -44,6 +45,20 @@ const validationsForm = (form, e) => {
     validFields.email = false;
   } else {
     validFields.email = true;
+  }
+
+  const typesFile = ["pdf", "png", "jpg", "jpeg"];
+  const extension = form?.file?.split(".")[1];
+
+  const isValidFile = typesFile.some((type) => type === extension);
+
+  if (!validator.isEmpty(form.file)) {
+    if (!isValidFile) {
+      errors.file = "El tipo de archivo no es valido (imagen o pdf)";
+      validFields.file = false;
+    } else {
+      validFields.file = true;
+    }
   }
 
   return errors;
@@ -99,7 +114,7 @@ export const ContactForm = () => {
 
   const handleSendMessage = (e) => {
     e.preventDefault();
-    if (!validFields.name || !validFields.email) {
+    if (!validFields.name || !validFields.email || !validFields.file) {
       Swal.fire({
         title: "Algo anda mal",
         icon: "warning",
@@ -178,7 +193,18 @@ export const ContactForm = () => {
             </div>
           </div>
         )}
-
+        <div className="margin__bottom-md">
+          <FormInput
+            type="file"
+            name="file"
+            placeholder="Su archivo"
+            icon="fa-solid fa-paperclip"
+            onChange={handleChange}
+            eventValidation={handleEventValidation}
+            value={form.file}
+            error={errors.file}
+          />
+        </div>
         <textarea
           className="form__textarea margin__bottom-lg"
           name="message"

@@ -47,6 +47,33 @@ export const FormInput = ({
     );
   }
 
+  if (type === "file") {
+    return (
+      <div className="form__input-container">
+        <div className={`form__input ${error !== "" && "form__input-error"}`}>
+          <span>
+            <i className={icon}></i>
+          </span>
+          <input
+            type={type}
+            name={name}
+            placeholder={placeholder}
+            onChange={onChange}
+            onBlur={eventValidation}
+            onKeyUp={eventValidation}
+            required
+            value={value}
+            accept="image/*, .pdf"
+          />
+          <span className="form__input-status">
+            {error !== "" && <i className="fa-regular fa-circle-xmark"></i>}
+          </span>
+        </div>
+        <span className="form__input-message">{error}</span>
+      </div>
+    );
+  }
+
   return (
     <div className="form__input-container">
       <div className={`form__input ${error !== "" && "form__input-error"}`}>
