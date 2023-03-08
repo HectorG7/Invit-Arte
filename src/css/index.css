@@ -1582,3 +1582,32 @@ option {
     height: auto;
   }
 }
+
+/***** Política de privacidad *****/
+
+.privacy__seccion-container {
+  margin: 2.5rem auto;
+}
+
+.privacy__seccion-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.privacy__seccion-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  border-bottom: 3px solid var(--mint);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.privacy__seccion p {
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
