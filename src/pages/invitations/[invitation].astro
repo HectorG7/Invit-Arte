@@ -1,0 +1,27 @@
+---
+import { getInvitationDataById } from "../../helpers/invitations/getInvitationDataById.js";
+
+import InvitationLayout from "../../layouts/InvitationLayout.astro";
+
+import Graduacion from "../designs/Graduacion.astro";
+import Bautizo from "../designs/Bautizo.astro";
+import Despedida from "../designs/Despedida.astro";
+
+const { invitation } = Astro.params;
+const { data } = await getInvitationDataById(invitation);
+const invitationData = (await data[0]) || [];
+
+const events = {
+  2: Bautizo,
+  5: Despedida,
+  6: Graduacion,
+};
+const Component = events[invitationData.designId];
+---
+
+<InvitationLayout
+  title={invitationData.eventName}
+  designId={invitationData.designId}
+>
+  <Component {...invitationData} />
+</InvitationLayout>
