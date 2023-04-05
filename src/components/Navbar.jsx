@@ -14,6 +14,10 @@ const Navbar = () => {
       url: "/contact/",
     },
     {
+      text: "sobre nosotros",
+      url: "/about/",
+    },
+    {
       text: "invitación personalizada",
       url: "/custom-invitation/",
     },
