@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SubPageLayout from "../layouts/SubPageLayout.astro";
-import { ContactForm } from "../components/forms/ContactForm.jsx";
+import { ContactForm } from "../components/forms/CustomInvForm.jsx";
 ---
 
 <Layout title="Invit💛Arte (Contacto)">
-  <SubPageLayout title="Contáctanos">
+  <SubPageLayout title="Envíanos tus ideas">
     <main>
       <section class="contact container">
         <div class="contact__container">
@@ -15,7 +15,7 @@ import { ContactForm } from "../components/forms/ContactForm.jsx";
           <a href="" class="contact__button">
             <p>
               <i class="bx bxl-whatsapp"></i>
-              <span>Contáctanos por WhatsApp</span>
+              <span>Envíanos tus ideas por WhatsApp</span>
             </p>
           </a>
           <a href=""></a>
@@ -29,7 +29,7 @@ import { ContactForm } from "../components/forms/ContactForm.jsx";
 
   const botonWA = document.querySelector(".contact__button");
   const mensaje =
-    "Hola, Invit.Arte, deseo ponerme en contacto contigo.";
+    "Hola, Invit.Arte, quiero realizar una invitación para una fecha importante, ¿Me ayudarías a crear mi invitación?";
   botonWA.addEventListener("click", () => {
     window.open(`https://wa.me/525611268833?text=${mensaje}`);
   });

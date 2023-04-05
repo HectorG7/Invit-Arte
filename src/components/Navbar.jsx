@@ -10,8 +10,12 @@ const Navbar = () => {
 
   const links = [
     {
-      text: "invitación personalizada",
+      text: "contacto",
       url: "/contact/",
+    },
+    {
+      text: "invitación personalizada",
+      url: "/custom-invitation/",
     },
     {
       text: "categorías",
