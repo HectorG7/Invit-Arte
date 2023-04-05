@@ -36,7 +36,7 @@ const validationsForm = (form) => {
     errors.email = "El correo es obligatorio";
     validFields.email = false;
   } else if (!validator.isEmail(form.email)) {
-    errors.email = "Eso no parece un correo electrónico 🥸";
+    errors.email = "Formato de correo electrónico no valido";
     validFields.email = false;
   } else {
     validFields.email = true;
@@ -46,7 +46,7 @@ const validationsForm = (form) => {
     errors.password = "La contraseña es obligatoria";
     validFields.password = false;
   } else if (!validator.isStrongPassword(form.password, { minSymbols: 0 })) {
-    errors.password = "Al menos 8 caracteres, una minúscula y un número";
+    errors.password = "Al menos 8 caracteres, una mayúscula y un número";
     validFields.password = false;
   } else {
     validFields.password = true;

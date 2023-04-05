@@ -41,7 +41,7 @@ const validationsForm = (form, e) => {
     errors.email = "El correo es obligatorio";
     validFields.email = false;
   } else if (!validator.isEmail(form.email)) {
-    errors.email = "Eso no parece un correo electrónico 🥸";
+    errors.email = "Formato de correo electrónico no valido";
     validFields.email = false;
   } else {
     validFields.email = true;
@@ -83,7 +83,7 @@ export const ContactForm = () => {
   const templateId = "template_7l5lpfw";
   const idEmail = "Zz0X-xgpxN5rS44Xx";
   const defaultMessage =
-    "Hola, Invit.Arte, Quiero celebrar una fecha importante 🥳. ¿Me ayudarías a crear mi invitación? 👉👈";
+    "Hola, Invit.Arte, Quiero celebrar una fecha importante. ¿Me ayudarías a crear mi invitación?";
 
   const handleSendMessageOfUser = (e) => {
     e.preventDefault();
