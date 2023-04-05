@@ -1611,3 +1611,77 @@ option {
   font-weight: 500;
   line-height: 1.25;
 }
+
+/***** Sobre Nosotros *****/
+
+.about__seccion-container {
+  margin: 2.5rem auto;
+}
+
+.about__seccion-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.about__seccion-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  border-bottom: 3px solid var(--mint);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.about__seccion p {
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.about__seccion-image {
+  width: 20rem;
+  animation: up-and-down 1s infinite;
+}
+
+.separator {
+  height: 0.5rem;
+  background: linear-gradient(90rad, var(--mint), var(--yellow));
+  width: 90%;
+  margin: 3.5rem auto;
+}
+
+@media (min-width: 768px) {
+  .about__seccion-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    padding: 3rem;
+  }
+
+  .about__seccion {
+    max-width: 30%;
+  }
+
+  .about__seccion-title {
+    font-size: 3.5rem;
+  }
+
+  .about__seccion-image {
+    width: 45rem;
+  }
+
+  .separator {
+    height: 0.5rem;
+    width: 40%;
+    margin: 3.5rem auto;
+  }
+
+  .direction__reverse {
+    flex-direction: row-reverse;
+  }
+}
