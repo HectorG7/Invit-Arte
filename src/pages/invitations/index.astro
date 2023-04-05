@@ -1,0 +1,4 @@
+---
+const invitationId = Astro.url.searchParams.get("invitation");
+return Astro.redirect(invitationId ? `/invitations/${invitationId}` : "/");
+---
