@@ -1686,6 +1686,29 @@ option {
   }
 }
 
+/***** Create Invitation *****/
+
+.form__create {
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  margin: 5rem auto;
+}
+
+.create__seccion-image {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .create__seccion-image {
+    display: block;
+    width: 550px;
+    animation: up-and-down 1s infinite;
+  }
+}
+
+/**** Pantalla de carga ****/
+=======
 /***** Admin *****/
 
 .users {
@@ -1742,10 +1765,12 @@ option {
   font-weight: 700;
   letter-spacing: 6px;
 }
+
 .loader:before {
   content: "Cargando";
   color: var(--darkGreen);
 }
+
 .loader:after {
   content: "";
   width: 20px;
@@ -1962,4 +1987,4 @@ option {
   100% {
     transform: scale(3);
   }
-}
+
