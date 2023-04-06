@@ -1,0 +1,12 @@
+---
+import AdminLayout from "../../layouts/AdminLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import { UsersPage } from "../../components/admin/UsersPage";
+---
+
+<Layout>
+  <AdminLayout>
+    <UsersPage client:load />
+  </AdminLayout>
+</Layout>
