@@ -13,11 +13,7 @@ const templates = data;
     <main>
       <div>
         <li class="navbar__menu-search">
-          <input
-            type="search"
-            id="searchBar"
-            placeholder="Buscar tu diseño"
-          />
+          <input type="search" id="searchBar" placeholder="Buscar tu diseño" />
           <button id="searchButton">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -66,9 +62,8 @@ const templates = data;
     imagenesLight.classList.toggle("showImage");
   };
 
-
   //Barra de búsqueda
-  const barra = document.querySelector("#searchBar"); 
+  const barra = document.querySelector("#searchBar");
   barra.addEventListener("keyup", (e) => {
     var busqueda = e.target.value.toLowerCase();
 
