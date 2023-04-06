@@ -1,0 +1,11 @@
+---
+import { PanelAdmin } from "../../components/admin/PanelAdmin";
+import AdminLayout from "../../layouts/AdminLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Administrador">
+  <AdminLayout>
+    <PanelAdmin client:load />
+  </AdminLayout>
+</Layout>
