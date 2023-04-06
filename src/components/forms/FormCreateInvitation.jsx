@@ -175,7 +175,7 @@ const FormCreateInvitation = () => {
           <FormInput
             type="text"
             name="name"
-            placeholder="Nombre del festejad@"
+            placeholder="Nombre del evento"
             icon="fa-solid fa-user"
             onChange={handleChange}
             eventValidation={handleEventValidation}
