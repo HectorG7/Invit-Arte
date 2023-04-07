@@ -1,9 +1,11 @@
 ---
 import AdminLayout from "../../layouts/AdminLayout.astro";
 import Layout from "../../layouts/Layout.astro";
+import { DesignsPage } from "../../components/admin/DesignsPage";
 ---
 
 <Layout>
   <AdminLayout>
+    <DesignsPage client:load />
   </AdminLayout>
 </Layout>
