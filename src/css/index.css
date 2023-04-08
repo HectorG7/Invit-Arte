@@ -1917,7 +1917,17 @@ option {
 }
 
 .options__buttons button.second {
-  border-color: var(--yellow);
+  border-color: var(--mint);
+  background-color: var(--darkGreen);
+  color: var(--white);
+}
+
+.options__buttons ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
 }
 
 .close__content {
@@ -1978,6 +1988,31 @@ option {
   inset: 0px;
   background: rgba(0, 0, 0, 0.565);
   z-index: 19;
+}
+
+/** Pagina de administrador (designs) **/
+
+.item__content-image img {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.title__section-page h3 {
+  font-size: 22px;
+}
+
+.title__section-page h4 {
+  font-size: 28px;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.warning {
+  font-size: 26px;
+  margin: 30px auto;
+  font-weight: 600;
 }
 
 @keyframes fillBaloon {
