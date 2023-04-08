@@ -1,23 +1,19 @@
 ---
-import CategoriesCard from "../components/CategoriesCard.astro";
-import { supabase } from "../config/supabase.config";
-import Layout from "../layouts/Layout.astro";
-import SubPageLayout from "../layouts/SubPageLayout.astro";
+import TemplateCard from "../../components/TemplateCard.astro";
+import { supabase } from "../../config/supabase.config";
+import Layout from "../../layouts/Layout.astro";
+import SubPageLayout from "../../layouts/SubPageLayout.astro";
 
-const { data } = await supabase.from("categories").select().order("name");
+const { data } = await supabase.from("designs").select().order("name");
 const templates = data;
 ---
 
-<Layout title="Invit💛Arte (Diseños)">
-  <SubPageLayout title="Categorías Disponibles">
+<Layout title="Invit💛Arte (Diseños)" bot>
+  <SubPageLayout title="Diseños Disponibles">
     <main>
       <div>
         <li class="navbar__menu-search">
-          <input
-            type="search"
-            id="searchBar"
-            placeholder="Buscar categoría"
-          />
+          <input type="search" id="searchBar" placeholder="Buscar tu diseño" />
           <button id="searchButton">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -28,7 +24,7 @@ const templates = data;
           <div class="contenedorP contPlantillas">
             {
               templates.map((template, i) => (
-                <CategoriesCard id={i + 1} {...template} />
+                <TemplateCard id={i + 1} {...template} />
               ))
             }
             <section class="imagen-light">
@@ -66,9 +62,8 @@ const templates = data;
     imagenesLight.classList.toggle("showImage");
   };
 
-
   //Barra de búsqueda
-  const barra = document.querySelector("#searchBar"); 
+  const barra = document.querySelector("#searchBar");
   barra.addEventListener("keyup", (e) => {
     var busqueda = e.target.value.toLowerCase();
 

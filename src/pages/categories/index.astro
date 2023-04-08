@@ -1,0 +1,90 @@
+---
+import CategoriesCard from "../../components/CategoriesCard.astro";
+import { supabase } from "../../config/supabase.config.js";
+import Layout from "../../layouts/Layout.astro";
+import SubPageLayout from "../../layouts/SubPageLayout.astro";
+
+const { data } = await supabase.from("categories").select().order("name");
+const templates = data;
+
+console.log(templates);
+---
+
+<Layout title="Invit💛Arte (Diseños)" bot>
+  <SubPageLayout title="Categorías Disponibles">
+    <main>
+      <div>
+        <li class="navbar__menu-search">
+          <input type="search" id="searchBar" placeholder="Buscar categoría" />
+          <button id="searchButton">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </li>
+      </div>
+      <section class="sTarjetas">
+        <div class="contenedor">
+          <div class="contenedorP contPlantillas">
+            {
+              templates.map((template, i) => (
+                <CategoriesCard id={i + 1} {...template} />
+              ))
+            }
+            <section class="imagen-light">
+              <img src="/images/cerrar.svg" alt="" class="close" />
+              <img src="" alt="" class="agregarImg" />
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+  </SubPageLayout>
+</Layout>
+<script>
+  const imagenes = document.querySelectorAll(".plantilla");
+  const imagenesLight = document.querySelector(".agregarImg");
+  const contenedorLight = document.querySelector(".imagen-light");
+  const flecha = document.querySelector(".button__top");
+
+  imagenes.forEach((imagen) => {
+    imagen.addEventListener("click", () => {
+      aparecerImg(imagen.getAttribute("src"));
+    });
+  });
+
+  contenedorLight.addEventListener("click", (e) => {
+    if (e.target !== imagenesLight) {
+      contenedorLight.classList.toggle("show");
+      imagenesLight.classList.toggle("showImage");
+    }
+  });
+
+  const aparecerImg = (imagen) => {
+    imagenesLight.src = imagen;
+    contenedorLight.classList.toggle("show");
+    imagenesLight.classList.toggle("showImage");
+  };
+
+  //Barra de búsqueda
+  const barra = document.querySelector("#searchBar");
+  barra.addEventListener("keyup", (e) => {
+    var busqueda = e.target.value.toLowerCase();
+
+    const contTarjetas = document.querySelector(".contPlantillas");
+    const tarjeta = document.querySelectorAll(".fondo");
+    const nomTarjeta = contTarjetas.getElementsByTagName("h2");
+
+    for (var i = 0; i < nomTarjeta.length; i++) {
+      let comparar = tarjeta[i].getElementsByTagName("h2")[0];
+
+      if (comparar) {
+        let textValue = comparar.textContent || comparar.innerHTML;
+
+        if (textValue.toLowerCase().indexOf(busqueda) > -1) {
+          tarjeta[i].style.display = "";
+        } else {
+          tarjeta[i].style.display = "none";
+        }
+      }
+    }
+  });
+</script>
