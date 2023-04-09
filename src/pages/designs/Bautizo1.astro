@@ -1,0 +1,109 @@
+---
+const { eventName, date, time, address, dressCode } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tarjeta de bautizo</title>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="tarjeta-wrap">
+        <div class="tarjeta">
+          <div class="adelante card2"></div>
+          <div class="atras">
+            <p>
+              Estás invitado a la celebración del bautizo de: [{eventName}]. <br
+              /><br />
+              El día [{date}] <br /><br />
+              En [{address}] <br /><br />
+              Vestimenta: <br />
+              [{dressCode}]
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .wrap {
+        width: 1100px;
+        margin: 110px auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .tarjeta-wrap {
+        margin: 10px;
+        -webkit-perspective: 800;
+        perspective: 800;
+      }
+
+      .tarjeta {
+        width: 300px;
+        height: 350px;
+        background: #eae5f5;
+        position: relative;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: 0.7s ease;
+        transition: 0.7s ease;
+        -webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+        box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+      }
+
+      .adelante,
+      .atras {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .adelante {
+        width: 100%;
+      }
+
+      .atras {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        padding: 35px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        color: #000000;
+        font-family: "open sans";
+      }
+
+      .tarjeta-wrap:hover .tarjeta {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+      }
+
+      .card2 {
+        background-image: url(/images/invitations/bautizo.jpg);
+        background-size: cover;
+      }
+    </style>
+  </body>
+</html>
