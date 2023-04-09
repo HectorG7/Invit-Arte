@@ -1,11 +1,17 @@
 ---
-import TemplateCard from "../../components/TemplateCard.astro";
 import { supabase } from "../../config/supabase.config";
+
 import Layout from "../../layouts/Layout.astro";
 import SubPageLayout from "../../layouts/SubPageLayout.astro";
 
-const { data } = await supabase.from("designs").select().order("name");
-const templates = data;
+import { getDesignsByCategorie } from "../../helpers/admin/getCategories.js";
+
+import TemplateCard from "../../components/TemplateCard.astro";
+
+const { id } = Astro.params;
+const param = parseInt(Astro.url.searchParams.get("id"));
+
+const { designs } = await getDesignsByCategorie(param);
 ---
 
 <Layout title="Invit💛Arte (Diseños)" bot>
@@ -23,9 +29,13 @@ const templates = data;
         <div class="contenedor">
           <div class="contenedorP contPlantillas">
             {
-              templates.map((template, i) => (
-                <TemplateCard id={i + 1} {...template} />
-              ))
+              designs?.length > 0 ? (
+                designs?.map((design, i) => (
+                  <TemplateCard id={i + 1} {...design} />
+                ))
+              ) : (
+                <span class="warning">No existen Diseños</span>
+              )
             }
             <section class="imagen-light">
               <img src="/images/cerrar.svg" alt="" class="close" />

@@ -9,7 +9,7 @@ const hostname = name.toLowerCase().replaceAll(" ", "-").replace("ñ", "n");
       <img src={image} alt={name} class="plantilla" />
     </header>
     <h2 class="costo">{name}</h2>
-    <a href=`${hostname}` class="button boton flex botonP">
+    <a href=`${hostname}?id=${id}` class="button boton flex botonP">
       Ver plantillas<i class="fa-solid fa-arrow-right"></i>
     </a>
   </article>
