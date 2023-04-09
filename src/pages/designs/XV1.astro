@@ -1,0 +1,133 @@
+---
+const { eventName, date, time, address, dressCode } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/mbt4tna.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/kid2tin.css" />
+    <title>XV Años</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Fiesta de XV años de [{eventName}]</h1>
+        <p class="text-dark">
+          Es un gran honor para mí invitarlos a celebrar mis quince años, un
+          momento muy especial en mi vida. Me gustaría compartir con ustedes una
+          noche llena de alegría, música y baile, mientras celebramos juntos mi
+          transición a la adultez.
+          <br />
+          <br /> Con cariño, [{eventName}]
+        </p>
+      </div>
+      <div class="flap">
+        &nbsp; [{date} - {time}], [{dressCode}] y [{address}]
+      </div>
+    </div>
+    <style>
+      @import url(//fonts.googleapis.com/css?family=Abril+Fatface|Droid+Serif:400,700,400italic,700italic);
+      @import url("https://fonts.googleapis.com/css?family=Asap+Condensed:600i,700");
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 5, 10, 0.4) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        font-family: "Droid Serif", serif;
+      }
+      /*--------------- XV Años ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+      @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&display=swap");
+
+      body {
+        background: #f2f2f2;
+        color: white;
+      }
+
+      .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 400px;
+        width: 600px;
+        background-color: #00dbde;
+        background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+
+        overflow: hidden;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0 0 20px 8px #d0d0d0;
+      }
+
+      .content {
+        position: absolute;
+        top: 50%;
+        transform: translatey(-50%);
+        text-align: justify;
+        color: white;
+        padding: 60px;
+        font-family: "Merriweather", serif;
+      }
+
+      h1 {
+        font-weight: 900;
+        text-align: center;
+      }
+
+      h3 {
+        font-weight: 300;
+      }
+
+      .flap {
+        width: 100%;
+        height: 100%;
+      }
+
+      .flap::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 50%;
+        background: url("https://pbs.twimg.com/profile_images/1347260174176710658/2GfSZ1i__400x400.jpg")
+          white;
+        background-position: 100px;
+        background-repeat: no-repeat;
+        transition: 1s;
+      }
+
+      .flap::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 50%;
+        right: 0;
+        background: url("https://pbs.twimg.com/profile_images/1347260174176710658/2GfSZ1i__400x400.jpg")
+          white;
+        background-position: -200px;
+        background-repeat: no-repeat;
+        transition: 1s;
+      }
+
+      .container:hover .flap::after {
+        transform: translatex(300px);
+      }
+
+      .container:hover .flap::before {
+        transform: translatex(-300px);
+      }
+
+      /*--------------- XV Años ----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+    </style>
+  </body>
+</html>

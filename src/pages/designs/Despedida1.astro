@@ -1,0 +1,191 @@
+---
+const { eventName, date, time, address, dressCode } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarjeta-Despedida de soltero</title>
+  </head>
+
+  <body>
+    <div class="container__background-triangle">
+      <div class="triangle triangle1"></div>
+      <div class="triangle triangle2"></div>
+      <div class="triangle triangle3"></div>
+    </div>
+
+    <div class="container__cards">
+      <div class="card">
+        <div class="cover__card">
+          <img src="images/invitations/despedida.jpg" alt="" />
+        </div>
+        <h2>Quedas invitado a la fiesta de: [{eventName}]</h2>
+        <p>
+          No te lo pierdas, será una fecha inolvidable <br /><br />
+          Te esperamos en: [{address}] <br /><br />
+          Va a haber tachas y perico
+        </p>
+        <hr />
+        <div class="footer__card">
+          <h3 class="user__name">Vestido de: {dressCode}</h3>
+          <i>[{date} - {time}]</i>
+        </div>
+      </div>
+    </div>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #e5e3f3;
+      }
+
+      .container__background-triangle {
+        max-width: 1200px;
+        height: 600px;
+        margin: auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @keyframes t1 {
+        0% {
+          transform: rotate(45deg) translateY(0px);
+        }
+        50% {
+          transform: rotate(45deg) translateY(20px);
+        }
+        100% {
+          transform: rotate(45deg) translateY(0px);
+        }
+      }
+
+      @keyframes t2 {
+        0% {
+          transform: rotate(65deg) translateY(0px);
+        }
+        50% {
+          transform: rotate(65deg) translateY(20px);
+        }
+        100% {
+          transform: rotate(65deg) translateY(0px);
+        }
+      }
+
+      @keyframes t3 {
+        0% {
+          transform: rotate(45deg) translateY(0px);
+        }
+        50% {
+          transform: rotate(45deg) translateY(20px);
+        }
+        100% {
+          transform: rotate(45deg) translateY(0px);
+        }
+      }
+
+      .container__cards {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .card {
+        width: 350px;
+        margin: 10px;
+        padding: 20px;
+        box-shadow: 20px 20px 50px rgba(49, 45, 45, 0.5);
+        background: rgb(177, 152, 152);
+        border-left: 1px solid rgba(74, 60, 60, 0.5);
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        transition: all 300ms;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card:hover .cover__card img {
+        transform: scale(1.1);
+      }
+
+      .cover__card {
+        width: 100%;
+        height: 180px;
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .cover__card img {
+        width: 110%;
+        transition: all 300ms;
+      }
+
+      .card h2 {
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 20px;
+        color: #fff;
+      }
+
+      .card p {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 300;
+        color: #fff;
+        letter-spacing: 0.5px;
+      }
+
+      .card hr {
+        margin-top: 30px;
+        border: none;
+        height: 0.2px;
+        background: #41414138;
+      }
+
+      .footer__card {
+        margin-top: 10px;
+        display: flex;
+        color: #fff;
+        justify-content: space-between;
+      }
+
+      .footer__card h3 {
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      @media screen and (max-width: 1200px) {
+        .container__cards {
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: none;
+          margin-top: 100px;
+          padding-bottom: 100px;
+        }
+      }
+    </style>
+  </body>
+</html>
