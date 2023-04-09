@@ -1,0 +1,101 @@
+---
+const { eventName, date, address, time, dressCode } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald|Zilla+Slab:300i"
+      rel="stylesheet"
+    />
+    <title>Despedida de soltero</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="floral-background">
+        <div class="text-block">
+          <div class="words">
+            <h3 class="zilla less-space">Estás invitado a la</h3>
+            <h1 class="oswald uppercase some-space bigger-text">
+              Despedida de soltero
+            </h1>
+            <h4 class="zilla less-space">en honor<br /> al próximo novio</h4>
+            <h2 class="oswald uppercase some-space">{eventName}</h2>
+            <h3 class="zilla less-space">
+              el día: {date} &middot;<br />
+              en: {address}
+              <br /><span class="gray">Confirma tu participación</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      body {
+        background: #fff;
+      }
+
+      * {
+        margin: 10px;
+        text-align: center;
+        color: black;
+      }
+      #container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .floral-background {
+        width: 450px;
+        height: 500px;
+        background-image: url("https://ih0.redbubble.net/image.469957695.7951/flat,750x1000,075,t.u3.jpg");
+        background-repeat: no-repeat;
+        box-shadow: 8px 10px 6px -6px #777;
+        background-color: #f8f8f8;
+      }
+      .text-block {
+        width: 350px;
+        height: 400px;
+        background-color: #fff;
+        margin: 50px;
+        border: 3px solid #deeef9;
+        outline: 3px solid #a3d5ba;
+        outline-offset: 15px;
+      }
+      .words {
+        padding: 5px;
+        line-height: 200%;
+      }
+      .zilla {
+        font-family: "Zilla Slab", "Lucida Sans", serif;
+      }
+      .oswald {
+        font-family: "Oswald", sans-serif;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+      .lowercase {
+        text-transform: lowercase;
+      }
+      .some-space {
+        letter-spacing: 3px;
+      }
+      .less-space {
+        letter-spacing: 2px;
+      }
+      .bigger-text {
+        font-size: 38px;
+      }
+      .gray {
+        color: #a3d5ba;
+      }
+    </style>
+  </body>
+</html>
