@@ -149,7 +149,7 @@ const FormCreateInvitation = () => {
     }).then((res) => {
       if (res.isConfirmed) {
         setTimeout(() => {
-          window.location.href = `/invitations?invitation=${uuid}`;
+          window.location.href = `/finish?invitation=${uuid}`;
         }, 500);
       }
     });
