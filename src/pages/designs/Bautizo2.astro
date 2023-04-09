@@ -1,0 +1,147 @@
+---
+const { eventName, date, address, time, dressCode } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bautizo</title>
+  </head>
+
+  <body>
+    <section class="card">
+      <div class="card__body">
+        <img
+          src="https://res.cloudinary.com/dkv3luev6/image/upload/v1669274450/IcoBaut_tnltzj.png"
+        />
+        <p class="std">Bautizo de {eventName}</p><br />
+        <p class="info">{date}</p>
+        <p class="date">{address}</p><br />
+        <p class="names">{dressCode}</p>
+      </div>
+    </section>
+  </body>
+</html>
+<style>
+  :root {
+    --gray: #96979b;
+    --blue: #9beafb;
+    --ivory: #fff7d5;
+
+    --zigzag-size: 1cm;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    text-align: center;
+  }
+
+  .card {
+    width: 10cm;
+    height: fit-content;
+    padding: 2cm 0;
+    margin: 1cm auto;
+    box-shadow: 0.25cm 0.25cm 1cm black;
+    background: var(--ivory);
+    background-image: url("http://img0.etsystatic.com/012/0/7003894/il_570xN.452537494_pczk.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .card__body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+
+  .std {
+    margin: 1.5cm 0 0;
+    font-family: "Tangerine", cursive;
+    font-weight: 400;
+    font-size: 64px;
+    color: var(--gray);
+  }
+
+  .info {
+    margin: 0;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gray);
+  }
+
+  .date {
+    margin: 0;
+    font-family: "Poiret One", cursive;
+    font-size: 32px;
+    color: var(--blue);
+  }
+
+  .names {
+    margin: 0;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: var(--blue);
+    text-align: center;
+  }
+
+  .ou {
+    margin: 0;
+    font-family: "Tangerine", cursive;
+    font-size: 30px;
+    color: var(--gray);
+  }
+
+  div.qrcode {
+    position: absolute;
+    top: 14.09cm;
+    left: 25.47cm;
+  }
+
+  img {
+    height: 150px;
+    width: 150px;
+    padding-top: 10px;
+    margin: 0px auto;
+  }
+
+  div.web {
+    position: absolute;
+    top: 15.42cm;
+    left: 22.34cm;
+  }
+
+  p.web {
+    margin: 0px;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-size: 16px;
+    color: var(--gray);
+    font-weight: 300;
+    padding-left: 3px;
+  }
+
+  span {
+    background-color: white;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .zigzag {
+    background: linear-gradient(135deg, #eceddc 25%, transparent 25%) -50px 0,
+      linear-gradient(225deg, #eceddc 25%, transparent 25%) -50px 0,
+      linear-gradient(315deg, #eceddc 25%, transparent 25%),
+      linear-gradient(45deg, #eceddc 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-repeat: repeat-x;
+    background-color: #ec173a;
+  }
+</style>
