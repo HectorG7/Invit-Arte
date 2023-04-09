@@ -1,5 +1,6 @@
 ---
 const { name, image, id } = Astro.props;
+const hostname = name.toLowerCase().replaceAll(" ", "-").replace("ñ", "n");
 ---
 
 <div class="fondo">
@@ -8,7 +9,7 @@ const { name, image, id } = Astro.props;
       <img src={image} alt={name} class="plantilla" />
     </header>
     <h2 class="costo">{name}</h2>
-    <a href="/designs/" class="button boton flex botonP">
+    <a href=`${hostname}?id=${id}` class="button boton flex botonP">
       Ver plantillas<i class="fa-solid fa-arrow-right"></i>
     </a>
   </article>

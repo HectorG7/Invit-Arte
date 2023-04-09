@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SubPageLayout from "../layouts/SubPageLayout.astro";
+
+const invitationId = Astro.url.searchParams.get("invitation");
+---
+
+<Layout title="Invit💛Arte (Invitación lista)">
+  <SubPageLayout title="Tu Invitación esta Lista">
+    <main class="about__seccion-container container">
+      <div class="about__seccion-description">
+        <div class="about__seccion">
+          <h3 class="about__seccion-title">
+            Es momento de compartirla a todos tus invitados
+          </h3>
+          <div
+            style="display: flex; flex-direction: column; gap: 50px; margin: 50px 0;"
+          >
+            <a
+              href=`/invitations?invitation=${invitationId}`
+              class="form__button form__button-primary"
+              style="text-decoration: none; text-align: center;"
+            >
+              <span class="form__button-text">Ver invitación</span>
+              <span class="form__button-icon">
+                <i class="bx bxs-slideshow"></i>
+              </span>
+            </a>
+            <button
+              type="button"
+              class="form__button form__button-primary"
+              id="pasteTo"
+            >
+              <span class="form__button-text">Copiar link</span>
+              <span class="form__button-icon">
+                <i class="bx bxs-copy"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="about__seccion-image">
+          <img src="/images/nosotros3.svg" alt="nosotros 1" />
+        </div>
+      </div>
+    </main>
+  </SubPageLayout>
+</Layout>
+<script>
+  import Swal from "sweetalert2";
+
+  const pasteToClipboard = async () => {
+    const url = window.location.href.replace("finish", "invitations");
+    try {
+      await navigator.clipboard.writeText(url);
+      Swal.fire({
+        title: "Listo",
+        icon: "success",
+        text: "El link se copio al portapapeles",
+        customClass: "fs-lg",
+      });
+    } catch (error) {
+      console.log("Error al copiar al portapapeles");
+    }
+  };
+
+  document
+    .querySelector("#pasteTo")
+    .addEventListener("click", pasteToClipboard);
+</script>

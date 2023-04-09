@@ -2015,6 +2015,10 @@ option {
   font-weight: 600;
 }
 
+.warning__design {
+  font-size: 40px;
+}
+
 @keyframes fillBaloon {
   0% {
     transform: scale(1);

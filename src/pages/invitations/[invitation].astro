@@ -3,18 +3,32 @@ import { getInvitationDataById } from "../../helpers/invitations/getInvitationDa
 
 import InvitationLayout from "../../layouts/InvitationLayout.astro";
 
-import Graduacion from "../designs/Graduacion.astro";
-import Bautizo from "../designs/Bautizo.astro";
-import Despedida from "../designs/Despedida.astro";
+import BabyShower1 from "../designs/BabyShower1.astro";
+import Bautizo1 from "../designs/Bautizo1.astro";
+import Bautizo2 from "../designs/Bautizo2.astro";
+import Boda1 from "../designs/Boda1.astro";
+import Cumple1 from "../designs/Cumple1.astro";
+import Despedida1 from "../designs/Despedida1.astro";
+import Despedida2 from "../designs/Despedida2.astro";
+import Graduacion1 from "../designs/Graduacion1.astro";
+import Graduacion2 from "../designs/Graduacion2.astro";
+import XV1 from "../designs/XV1.astro";
 
 const { invitation } = Astro.params;
 const { data } = await getInvitationDataById(invitation);
 const invitationData = (await data[0]) || [];
 
 const events = {
-  2: Bautizo,
-  5: Despedida,
-  6: Graduacion,
+  13: BabyShower1,
+  14: Bautizo1,
+  15: Boda1,
+  16: Cumple1,
+  17: Despedida1,
+  18: Graduacion1,
+  19: Bautizo2,
+  20: Despedida2,
+  21: Graduacion2,
+  22: XV1,
 };
 const Component = events[invitationData.designId];
 ---
