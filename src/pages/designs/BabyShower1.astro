@@ -1,0 +1,119 @@
+---
+const { eventName, date, time, address, dressCode } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitacion</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="shape">
+        <div class="image"></div>
+      </div>
+      <h3>Estás cordialmente invitado al babyshower de</h3>
+      <h4 class="title">[{eventName}]</h4>
+      <h4 class="title">El día: [{date}]</h4>
+
+      <p>
+        [{address}]
+        <br />
+        Hora:
+        <br />
+        [{time}]
+      </p>
+      <div class="icons"></div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+      }
+
+      .container {
+        height: 450px;
+        width: 300px;
+        box-shadow: 0 10px 20px #000;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+
+      .shape {
+        background-color: #002244;
+        height: 250px;
+        width: 400px;
+        margin-left: -20px;
+        position: relative;
+        top: -80px;
+        box-shadow: 0 2px 15px #000;
+        transform: rotate(25deg);
+      }
+
+      .image {
+        height: 100px;
+        width: 100px;
+        background-image: url(https://img.freepik.com/vector-gratis/lindo-bebe-durmiendo-ilustracion-icono-dibujos-animados-almohada-nube_138676-2812.jpg?w=360);
+        position: relative;
+        top: 200px;
+        margin-left: 170px;
+        background-size: cover;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 2px 15px rgb(58, 54, 54);
+        transform: rotate(-20deg);
+      }
+
+      .title {
+        font-size: 15px;
+        padding-bottom: 6px;
+        color: #0093af;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        padding-left: 30px;
+        padding-right: 30px;
+        line-height: 2;
+        color: rgb(105, 100, 109);
+        font-size: 15px;
+      }
+
+      .icons {
+        margin-top: 15px;
+      }
+
+      .icons i {
+        margin-left: 10px;
+        font-size: 20px;
+        transition: 0.3s;
+        color: rgb(40, 163, 194);
+      }
+
+      .icons i:hover {
+        transform: scale(1.2);
+        color: rgb(18, 192, 235);
+      }
+    </style>
+  </body>
+</html>
