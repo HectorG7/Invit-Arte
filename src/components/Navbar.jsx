@@ -37,6 +37,8 @@ const Navbar = () => {
     setUser($user);
   }, [$user]);
 
+  console.log(user)
+
   return (
     <nav className="navbar">
       <a href="/" className="navbar__logo">
@@ -62,11 +64,11 @@ const Navbar = () => {
               <a href="/login/">acceder</a>
             )}
           </li>
-          {user?.email === "admin@gmail.com" && (
+          {/* {user?.email === "admin@gmail.com" && (
             <li>
               <a href="/admin">Administrador</a>
             </li>
-          )}
+          )} */}
           {links.map(({ text, url }) => (
             <li key={text}>
               <a href={url}>{text}</a>
